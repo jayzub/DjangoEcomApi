@@ -27,4 +27,4 @@ class Product(models.Model):
         except:
             url = ''
         return url
-    img_url = property(get_imageURL)
+    image_url = property(get_imageURL)
