@@ -21,6 +21,16 @@ class CreateProductView(generics.CreateAPIView):
     serializer_class = ProductSerializer
 
 
+class ProductListById(generics.RetrieveAPIView):
+    """
+    Returns Product by id
+    """
+    serializer_class = ProductSerializer
+    permission_classes = [permissions.IsAuthenticated]
+    lookup_field = 'id'
+    queryset = Product.objects.all()
+
+
 class UpdateProductView(generics.UpdateAPIView):
     """
     Update a selected Product
